@@ -15,6 +15,7 @@ author: Alexandre Bugnard, Jules Gros-Daillon, Marin Piguet and Nicola Santacroc
 
 navbar-links:
   About Me: "aboutme"
+  Intro: "intro"
   Resources:
 #    - Beautiful Jekyll: "https://beautifuljekyll.com"
     - Learn markdown: "https://www.markdowntutorial.com/"
