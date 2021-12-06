@@ -1,4 +1,6 @@
-# This is the intro
-## Right ?
+---
+layout : page
+title : Intro
+---
 
 I hope it does the job
