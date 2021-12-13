@@ -101,6 +101,13 @@ subtitle: Application on quotes found in news articles
 </tbody>
 </table>
 	
+	<p>Data wrangling is therefore necessary. The idea is not to keep all the quotes for the sake of uncertainty. The following deletion criteria have been applied:</p>
+
+	<ul>
+	  <li>speaker is not identified or not clearly identified (p_1 < 0.5)</li>
+	  <li>is potentially confused with another speaker (p_1-p_2 < 0.3)</li>
+	</ul>
+	
 	<img src="assets/img/test_image.svg" alt="Test image">
   
   <h1>
