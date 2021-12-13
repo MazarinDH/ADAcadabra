@@ -107,8 +107,8 @@ subtitle: Application on quotes found in news articles
 	</p>
 
 	<ul>
-	  <li>speaker is not identified or not clearly identified (p_1 < 0.5)</li>
-	  <li>is potentially confused with another speaker (p_1-p_2 < 0.3)</li>
+	  <li>speaker is not identified or not clearly identified (p1 < 0.5)</li>
+	  <li>is potentially confused with another speaker (delta_p = p1-p2 < 0.3)</li>
 	</ul>
 	
 	<p>
@@ -130,11 +130,11 @@ subtitle: Application on quotes found in news articles
 		server directly instead of going through an intermediate web which increases the efficiency of the retrieval. 
 	</p>
 
-	<! --- WHOIS dataplot ---!>
+	<!-- WHOIS dataplot -->
 	
 	<p>
 		Another important piece of information in the analysis process is to know a little more about the speakers. 
-		For this, wikidata is a very interesting data source. As American politicians usually have a wikipedia page, information about their age, 
+		For this, <i>Wikidata</i> is a very interesting data source. As American politicians usually have a wikipedia page, information about their age, 
 		political orientation and gender can be easily retrieved automatically using a provided parquet file. 
 		In order to check the data representativity, the metadata from speakers is used to explore the different main features of speakers. 
 		Taking a random sample of 1 million of quotes, the following  distribution can be drawn : 
@@ -142,6 +142,142 @@ subtitle: Application on quotes found in news articles
 	
 	<img src="assets/img/metadataPlot_nationality_pie.svg" >
 	<img src="assets/img/metadataPlot_occupation_pie.svg" >
+	
+	<p>
+		The “US” nationality and the “politician” occupation seems to be predominant. 
+		Also, one might think that the use of informal language is less present in the political world than elsewhere. 
+		It would therefore be interesting to look more closely at this category of speakers.
+	</p>
+	
+	<p>
+		Thus, the decision to focus on <b>American politicians</b> has been taken. 
+		The quotes from this category of the population will be used to analyze the results of informal/formal classification techniques.
+	</p>
+	
+	
+	<h1>
+		How do you know if you write or speak the formal way or not ?
+	</h1>
+	
+	<p>
+		Now that we have a solid, clean and consistent database, let's tackle the difficult question: 
+	</p>
+	
+	<p>
+		<i>What is the difference between formal and informal language?</i>
+	</p>
+	
+  
+	<p>
+		Formal and informal language serve different purposes in written communications. 
+		The tone, the choice of words and the way the words are put together vary between the two different styles. 
+		Globally we can observe the following key facts:
+	</p>
+  
+	<ul>
+	  <li>Formal language is less personal than informal language.</li>
+	  <li>Informal language is more casual and spontaneous.</li>
+	</ul>
+  
+	<p>
+		These statements are quite general and define the difference between the two styles. 
+		However, implementing an algorithm from these elements seems a difficult task. 
+		More precise markers must be defined in order to facilitate the automatic processing of the quotes to be classified. 
+		In order to characterize the style of the language, it is important to focus on precise markers, easier to identify in natural language. 
+		The following points are commonly accepted as best characterizing informal style:
+	</p>
+  
+	<h3>
+		<b>Slang or colloquialism</b>
+	</h3>
+	
+	<p>
+		Often, slang terms are considered vulgar or offensive to use in polite conversation. 
+		Its use implies that the user is familiar with whatever is referred to, or with a group of people who are familiar with it and use the term. 
+		It often replaces a well-known conventional synonym.
+	</p>
+	
+	<h3>
+		<b>Contractions</b>
+	</h3>
+	
+	<p>
+		A contraction is a shortened form of a word (or group of words) that omits certain letters or sounds. 
+		They are common in speech and in informal writing, but tend to be avoided in more formal writing.
+	</p>
+	
+	<h3>
+		<b>Phrasal verbs</b>
+	</h3>
+	
+	<p>
+		The combination of two or three words from different grammatical categories. 
+		Although phrasal verbs are acceptable in spoken English, 
+		they are frequently considered too informal for academic writing.
+	</p>
+	
+	<h3>
+		<b>First person pronouns</b>
+	</h3>
+	
+	<p>
+		Personal pronouns that refer to the author or authors – I, we, my, etc. 
+		The norm in the academic field tends to banish it to maintain an objective, 
+		impersonal tone and keep the focus on the material rather than the author. 
+		When it comes to giving your opinion, as in politics, 
+		the impersonal tone is to keep the focus on the material rather than the author seems not to apply. 
+		For this reason, this criterion will not be used for the analysis of quotes from American politics.
+	</p>
+  
+  
+	<p>
+		A study (<a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.364.4671&rep=rep1&type=pdf" target="_blank">F. Sheikha and D. Inkpen 2012</a>) 
+		conducted on a similar topic to the one discussed was a major influence on this work. 
+		The authors describe precisely how they classify different texts between formal and informal language. 
+		The results obtained by this team seem to corroborate the criteria taken into account in this work.
+	</p>
+  
+  
+  
+	<h1>
+		Let's apply these concepts !
+	</h1>
+  
+	<p>
+		To detect <b>slang words</b> you just have to take a database listing them and test each quote. 
+		If the word is present the quote is tagged as informal. 
+		To do this the formal word dictionary was imported from Urban dictionary. 
+		Urban Dictionary is a dictionary of slang or cultural words and phrases, not typically found in standard dictionaries. 
+		About 16000 words have been analyzed and the most common detected ones removed from the list to avoid a too high false positive rate. 
+		The biggest problem with this method is that it is too arbitrary. 
+		It is true that the words taken into account come from Urban dictionary, known as the reference for slang words, 
+		but as explained above a threshold must be introduced to avoid including words that are too frequent. 
+		Some words from the urban dictionary are widely used nowadays which makes the classification not very robust. 
+		For example in the following sentence:
+	</p>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   <h1>
     Methods : distinguish formal and informal
