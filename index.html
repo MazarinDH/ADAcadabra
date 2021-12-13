@@ -101,22 +101,47 @@ subtitle: Application on quotes found in news articles
 </tbody>
 </table>
 	
-	<p>Data wrangling is therefore necessary. The idea is not to keep all the quotes for the sake of uncertainty. The following deletion criteria have been applied:</p>
+	<p>
+		Data wrangling is therefore necessary. The idea is not to keep all the quotes for the sake of uncertainty. 
+		The following deletion criteria have been applied:
+	</p>
 
 	<ul>
 	  <li>speaker is not identified or not clearly identified (p_1 < 0.5)</li>
 	  <li>is potentially confused with another speaker (p_1-p_2 < 0.3)</li>
 	</ul>
 	
-	<p>After this data wrangling, the repartition of probabilities is represented yearwise as a sanity check</p>
+	<p>
+		After this data wrangling, the repartition of probabilities is represented yearwise as a sanity check
+	</p>
 
 	
-<img src="assets/img/2015.png" >
+	<img src="assets/img/2015.png" >
 
 
-
-
+	<h1>
+		We need more data !
+	</h1>
 	
+	<p>
+		In order to better characterize where the news articles come from, it  is useful to obtain the source of the quote. 
+		To do this, the web domains of all entry URLs have been extracted and grouped into a domain data frame. The query goes through a 
+		<a href="https://en.wikipedia.org/wiki/WHOIS" target="_blank">WHOIS</a> 
+		server directly instead of going through an intermediate web which increases the efficiency of the retrieval. 
+	</p>
+
+	<! --- WHOIS dataplot ---!>
+	
+	<p>
+		Another important piece of information in the analysis process is to know a little more about the speakers. 
+		For this, wikidata is a very interesting data source. As American politicians usually have a wikipedia page, information about their age, 
+		political orientation and gender can be easily retrieved automatically using a provided parquet file. 
+		In order to check the data representativity, the metadata from speakers is used to explore the different main features of speakers. 
+		Taking a random sample of 1 million of quotes, the following  distribution can be drawn : 
+	</p>
+	
+	<img src="assets/img/metadataPlot_nationality_pie.svg" >
+	<img src="assets/img/metadataPlot_occupation_pie.svg" >
   
   <h1>
     Methods : distinguish formal and informal
