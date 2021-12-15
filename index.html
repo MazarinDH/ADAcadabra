@@ -182,11 +182,31 @@ img {vertical-align: middle;}
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
-  background-color: #717171;
+<!-- BACKGROUND -->
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 10s;
+  animation-name: fade;
+  animation-duration: 0.5s;
 }
 
-<!-- ANIMATION A REMETTRE ICI -->
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
 
 
 </style>	
@@ -196,7 +216,7 @@ img {vertical-align: middle;}
 <div class="slideshow-container">
 
 <div class="mySlides fade">
-  <img src="assets/img/epfl-logo.png" style="width:100%">
+  <img src="assets/img/2015.svg" style="width:100%">
 </div>
 
 <div class="mySlides fade">
