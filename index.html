@@ -828,6 +828,65 @@ function showSlides(n) {
 	</center>
 	
 	
+	<p>
+		With these few examples, it is clearly observable that the “Naive-Bayes” model captures much more the informality of the quotes. 
+		Indeed, some quotes are classified as “informal” with the contraction methods and formal by the “Naive-Bayes” method. 
+		These quotes often contain one or more contractions but on the other hand, 
+		some quotes are classified formal with contraction methods and informal with the other. 
+		As the quote no 8, these quotes generally contain one contraction that have been removed in the contraction method 
+		(under the defined threshold) or have a colloquial schema that has only been detected by the supervised machine learning model.
+	</p>
+	
+	
+	
+	<h1>
+		Now that the drawers are full and nicely organized, how to proceed ?
+	</h1>
+	
+	<p>
+		Our relentless quest for information has left us with a very rich set of data, 
+		it is now important to process them wisely to extract the most knowledge possible. 
+		Let's focus on the American politicians, on which we could collect data thanks to the metadata. 
+		The large number of quotes available in quotebank allows us to have a set of 600 000 excerpts of speeches 
+		attributed to American politicians. Let's see what all this data can tell us about the use of informal language 
+		in news articles between 2015 and 2020. 
+		Note that Donald Trump was not represented in the speaker metadata from Wikidata so he will not appear in the further analysis.
+	</p>
+	
+	
+	<p>
+		In order to aggregate political speakers, it was decided to consider only those speakers with more than 50 associated quotes. 
+		The fraction of informal quotes for each speaker is then more representative than taking 
+		into account speakers with a small number of associated quotes.
+	</p>
+	
+	<center><img src="assets/img/fraction_distribution.svg" style="max-width:600px"></center>
+	
+	<p>
+		The average familiar fraction with the Naive-Bayes method is much higher than that calculated with the "contractions" method. 
+		In other words, the supervised model captures many more informal citations than the contraction method. 
+		Also, the Naive-Bayes method has a higher dispersion than the contractions method. 
+	</p>
+	
+	<center><img src="assets/img/polAgrregPlot_top10_quotesnumber.svg" style="max-width:600px"></center>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
  
  
   
