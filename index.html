@@ -315,25 +315,24 @@ function showSlides(n) {
 	</p>
 
 
-TEST container script style
+TEST container with style 
+
 <style>
-.container     { position: relative; overflow: hidden; }
-.container img { position: absolute; }
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Container */
+.container {
+  max-width: 1250px;
+  position: relative;
+  margin: auto;
+}
 </style>
 <div class="container">
-	<img src="assets/img/metadataPlot_nationality_pie.svg" width="1250px">
+	<img src="assets/img/metadataPlot_nationality_pie.svg" width="100%">
 </div>
-
-<script type="text/javascript">
-$image = $('.container img');
-width = $image.width();
-height = $image.height();
-
-$image.css({
-    left: 0 - (width / 2),
-    top: 0 - (height / 2)
-});
-</script>
 
 
 
