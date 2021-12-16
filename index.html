@@ -6,7 +6,26 @@ cover-img: "assets/img/congress.jpg"
 ---
 
 <html>
-	
+
+<style>
+.frac {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    letter-spacing: 0.001em;
+    text-align: center;
+}
+.frac > span {
+    display: block;
+    padding: 0.1em;
+}
+.frac span.bottom {
+    border-top: thin solid black;
+}
+.frac span.symbol {
+    display: none;
+} 
+</style>	
 
 	
 <body> 	
@@ -73,44 +92,45 @@ cover-img: "assets/img/congress.jpg"
 	    The data output by the quotebank algorithm is of the following form:
     </p>
     
-<!-- Table example of one quote -->    
-    
+<!-- Table example of one quote -->    <center>
 <style type="text/css">
 .tg  {border-collapse:collapse;border-color:#93a1a1;border-spacing:0;}
 .tg td{background-color:#fdf6e3;border-color:#93a1a1;border-style:solid;border-width:1px;color:#002b36;
   font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
 .tg th{background-color:#657b83;border-color:#93a1a1;border-style:solid;border-width:1px;color:#fdf6e3;
   font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-rebb{border-color:inherit;font-family:Verdana, Geneva, sans-serif !important;;font-weight:bold;text-align:center;
+.tg .tg-yr59{color:#ffffff;font-family:Verdana, Geneva, sans-serif !important;;font-style:italic;font-weight:bold;text-align:left;
   vertical-align:top}
-.tg .tg-r0kq{border-color:inherit;font-family:Verdana, Geneva, sans-serif !important;;text-align:left;vertical-align:top}
-.tg .tg-xrb4{background-color:#eee8d5;border-color:inherit;font-family:Verdana, Geneva, sans-serif !important;;text-align:left;
-  vertical-align:top}
+.tg .tg-5k8v{font-family:Verdana, Geneva, sans-serif !important;;text-align:center;vertical-align:middle}
+.tg .tg-gqep{font-family:Verdana, Geneva, sans-serif !important;;text-align:left;vertical-align:top}
 </style>
-<table class="tg" style="undefined;table-layout: fixed; width: 544px">
-<colgroup>
-<col style="width: 310px">
-<col style="width: 119px">
-<col style="width: 119px">
-<col style="width: 119px">
-</colgroup>
+<table class="tg">
 <thead>
   <tr>
-    <th class="tg-rebb">Quote</th>
-    <th class="tg-rebb">Probability 1</th>
-    <th class="tg-rebb">Probability 2</th>
-    <th class="tg-rebb">Probability 3</th>
+    <th class="tg-yr59" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;background-color:transparent">Producer's accuracy</span></th>
+    <th class="tg-yr59" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;background-color:transparent">User's accuracy</span></th>
+    <th class="tg-yr59"><span style="font-weight:400;font-style:normal;text-decoration:none;background-color:transparent">Overall accuracy</span></th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td class="tg-r0kq">"Sorry losers and haters, but my IQ is one of the highest - and you all know it! Please don't feel so stupid or insecure, it's not your fault."</td>
-    <td class="tg-xrb4">D. Trump<br>80%</td>
-    <td class="tg-r0kq">M. Barnes<br>18%</td>
-    <td class="tg-xrb4">E. Malcolm<br>2%</td>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Formal</span></td>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">95.28%</span></td>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Formal</span></td>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">60.30%</span></td>
+    <td class="tg-5k8v" rowspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">64.25%</span></td>
+  </tr>
+  <tr>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Colloquial</span></td>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">29.26%</span></td>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Colloquial</span></td>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">84.62%</span></td>
   </tr>
 </tbody>
 </table>
+</center>
+
+
 	
 	<p>
 		Data wrangling is therefore necessary. The idea is not to keep all the quotes for the sake of uncertainty. 
@@ -312,7 +332,7 @@ function showSlides(n) {
 		We found out that about a third of the quotes appeared in articles whose URLs are detained by ten organisations.
 	</p>
 	
-TEST CONTAINER	center style 500 puis 800 local
+
 <style>
 /* container */
 .container {
@@ -325,11 +345,12 @@ TEST CONTAINER	center style 500 puis 800 local
 	<center> <img src="assets/img/metadataPlot_org_pie.svg"> </center>
 </div>
 
-<div class="container">
-	<center> <img src="assets/img/metadataPlot_org_top_ten_pie.svg" style="max-width: 800px"> </center>
+<div class="container"> <center>
+	  <img src="assets/img/metadataPlot_org_top_ten_pie.svg" style="max-width: 800px"> 
+</center>
 </div>
 
-FIN TEST
+
 	
 	<p>
 		It can be seen that a large share of the names appearing in the top ten organizations 
@@ -341,12 +362,23 @@ FIN TEST
 		<b>Geographical indicators</b> can also be used to find the origin of citations. 
 		We have tried to find information on the country, state and city of registration of URLs.
 	</p>
-	
-	<img src="assets/img/metadataPlot_country_pie.svg">
-	
-	<img src="assets/img/metadataPlot_state_pie.svg">
-	
-	<img src="assets/img/metadataPlot_city_pie.svg">
+
+
+
+<div class="container">	
+	<center><img src="assets/img/metadataPlot_country_pie.svg"></center>
+</div>	
+<br>
+<div class="container">	
+	<center><img src="assets/img/metadataPlot_state_pie.svg" style="max-width: 600px"></center>
+</div>	
+<br>
+<div class="container">	
+	<center><img src="assets/img/metadataPlot_city_pie.svg" style="max-width: 620px"></center>
+</div>
+
+
+
 	
 	<p>
 		We can observe that the United States is the most represented country. 
@@ -367,9 +399,16 @@ FIN TEST
 		Taking a random sample of 1 million of quotes, the following  distribution can be drawn : 
 	</p>
 	
+<div class="container">		
+	<center><img src="assets/img/metadataPlot_nationality_pie.svg" style="max-width: 1000px"></center>
+</div>	
+<br>
+<div class="container">	
+	<center><img src="assets/img/metadataPlot_occupation_pie.svg" style="max-width: 1000px"></center>
+</div>		
 	
-	<img src="assets/img/metadataPlot_nationality_pie.svg">
-	<img src="assets/img/metadataPlot_occupation_pie.svg">
+	
+	
 	
 	
 	<p>
@@ -488,7 +527,7 @@ FIN TEST
 		Some words from the urban dictionary are widely used nowadays even with this low threshold which makes the classification not very robust.
 	</p>
 	
-	<!-- Table wich words occurencies -->
+	<!-- Table wich words occurencies --> <center>
 	<style type="text/css">
 	.tg  {border-collapse:collapse;border-color:#93a1a1;border-spacing:0;}
 	.tg td{background-color:#fdf6e3;border-color:#93a1a1;border-style:solid;border-width:1px;color:#002b36;
@@ -534,7 +573,7 @@ FIN TEST
 	  </tr>
 	</tbody>
 	</table>
-  
+	</center>
   
 	<p>
 		We see that some quotes using these words could be considered as being formal. 
@@ -544,94 +583,471 @@ FIN TEST
 	</p>
 	
 	<p>
-		For example in the following sentence will be classified as informal 
+		It's easy to see that it's not going to work well, for example  <br>
+		<center><i>“[…] to REJECT incrementalism, to REJECT compromise, to REJECT  delay”</i></center><br>
+		<b>Cleve Jones</b><br><br>
+		does not intuitively seem to be a sentence to be classified as informal. 
+		The examples are numerous and this leads to the abandonment of this method. 
+		However, this way of proceeding allowed one to learn a lot about the structure of quotes and the language used in general. 
+		This method is naive but it is a good starting point to then approach more sophisticated strategies
 	</p>
   
-	<!-- TODO : ADD SENTENCE CLASSIFIED AS INFORMAL -->
+	
+	
+	<h1>
+		What about the contractions ? 
+	</h1>
+  
+  
+	<p>
+		As said in the theory, <b>contractions</b> are perfectly standard, but they’re usually considered to be relatively casual. 
+		To account for that, a list of banned contractions that should be avoided when writing a wikipedia page is available. 
+		This dataset is an illustrative, but non exhaustive list of contractions discriminating informal language.
+	</p>
+  
+	<p>
+		To qualify the performance of the classification, it is necessary to compare it with a groundtruth. 
+		The problem is that there is no clear criterion to characterize whether a quote is formal or informal. 
+		The subjectivity of the qualifier "informal" makes the task of setting labels difficult.  
+		Crowdsourcing has a lot of potential for such a task, because if enough people give their opinion then we will get closer to groundtruth.  
+		However, this method was not chosen due to lack of time and resources, so a mini crowdsourcing within the group was carried out. 
+		In total, four hundred randomly selected quotes have been labeled by the 4 members of the research group. 
+		The following results can be observed for the classification according to contractions. 
+	</p>
+  
+	
+	<center><img src="assets/img/contraction_cfmatrix.svg" style="max-width:600px"></center>
+  
+  
+	<p>
+		To fully understand how the model performs, we need accuracy metrics
+	</p>
+  
+<!-- Table with metric --><center>
+	
+<style type="text/css">
+.tg  {border-collapse:collapse;border-color:#93a1a1;border-spacing:0;}
+.tg td{background-color:#fdf6e3;border-color:#93a1a1;border-style:solid;border-width:1px;color:#002b36;
+  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{background-color:#657b83;border-color:#93a1a1;border-style:solid;border-width:1px;color:#fdf6e3;
+  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-hiln{color:#ffffff;font-family:Verdana, Geneva, sans-serif !important;;text-align:left;vertical-align:top}
+.tg .tg-5k8v{font-family:Verdana, Geneva, sans-serif !important;;text-align:center;vertical-align:middle}
+.tg .tg-gqep{font-family:Verdana, Geneva, sans-serif !important;;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-hiln" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;background-color:transparent">Producer's accuracy</span></th>
+    <th class="tg-hiln" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;background-color:transparent">User's accuracy</span></th>
+    <th class="tg-hiln"><span style="font-weight:400;font-style:normal;text-decoration:none;background-color:transparent">Overall accuracy</span></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Formal</span></td>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">95.28%</span></td>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Formal</span></td>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">60.30%</span></td>
+    <td class="tg-5k8v" rowspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">64.25%</span></td>
+  </tr>
+  <tr>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Colloquial</span></td>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">29.26%</span></td>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Colloquial</span></td>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">84.62%</span></td>
+  </tr>
+</tbody>
+</table>
+
+</center> 
+ 
+ 
+  
+  
+	<h1>
+		What do these numbers tell us?
+	</h1>
+  
+	<p>
+		First of all, less than 65% of the quotes are classified in the correct class as we are told by the Overall accuracy. 
+		This is probably better than random label attribution as we would get an Overall accuracy close to 50%. 
+		However, this tells us that the model is not really suited to assess the colloquial language question. 
+		To understand what does and does not work, let’s take a look at the other computed accuracies. <br>
+		The Producer’s accuracies show that real formal quotations are usually labelled correctly (in 95.28% of the cases), 
+		while real colloquial ones are often mistaken by the model for formal quotes.<br>
+		On the other hand, the User’s accuracies show that predictions stating 
+		that a quote is colloquial are right in 84.62% and only about 60% of the formal predictions are actually formal quotes.
+	</p>
+  
+  
+	<!-- TODO : FINISH THIS PART -->
+ 
+ 
+ 
+	<h1>
+		Are we going back to a naive method? Are you serious?
+	</h1>
+	
+	<p>
+		Yes, ok, the method taking into account the detection of slang words was already naive 
+		and showed its inability to do the job of classification in an appropriate way. 
+		However, from now on we talk about a classification method well known by data analysts: 
+		<b>naive bayes classification</b> <br>
+		This is a family of simple "probabilistic classifiers" based on applying 
+		<a href="https://en.wikipedia.org/wiki/Bayes%27_theorem" target="_blank">Bayes' theorem</a> 
+		with strong (and of course, naïve) independence assumptions between the features.
+	</p>
+ 
+	
+ 
+	<center><img src="assets/img/NBC_cfmatrix.svg" style="max-width:600px"></center>
+ 
+ 
+ 
+	<!-- TEXTE -->
+	
+	
+	<!-- Table metric -->
+	<center>
+	<style type="text/css">
+.tg  {border-collapse:collapse;border-color:#93a1a1;border-spacing:0;}
+.tg td{background-color:#fdf6e3;border-color:#93a1a1;border-style:solid;border-width:1px;color:#002b36;
+  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{background-color:#657b83;border-color:#93a1a1;border-style:solid;border-width:1px;color:#fdf6e3;
+  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-hiln{color:#ffffff;font-family:Verdana, Geneva, sans-serif !important;;text-align:left;vertical-align:top}
+.tg .tg-5k8v{font-family:Verdana, Geneva, sans-serif !important;;text-align:center;vertical-align:middle}
+.tg .tg-gqep{font-family:Verdana, Geneva, sans-serif !important;;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-hiln" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;background-color:transparent">Producer's accuracy</span></th>
+    <th class="tg-hiln" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;background-color:transparent">User's accuracy</span></th>
+    <th class="tg-hiln"><span style="font-weight:400;font-style:normal;text-decoration:none;background-color:transparent">Overall accuracy</span></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Formal</span></td>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">69.81%</span></td>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Formal</span></td>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">74.75%</span></td>
+    <td class="tg-5k8v" rowspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">71.50%</span></td>
+  </tr>
+  <tr>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Colloquial</span></td>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">73.40%</span></td>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Colloquial</span></td>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">68.32%</span></td>
+  </tr>
+</tbody>
+</table>
+	</center>
+ 
+ 
+ 
+	<h1>
+		A global overview: let’s take some examples !
+	</h1>
+	
+	<p>
+		The few examples of quotes have been chosen at random to give the 
+		reader an overview of the behavior of the two methods.
+	</p>
+ 
+ 
+ 
+	<!-- Table with lot of quotes -->
+	<center>
+	
+	<style type="text/css">
+.tg  {border-collapse:collapse;border-color:#93a1a1;border-spacing:0;}
+.tg td{background-color:#fdf6e3;border-color:#93a1a1;border-style:solid;border-width:1px;color:#002b36;
+  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{background-color:#657b83;border-color:#93a1a1;border-style:solid;border-width:1px;color:#fdf6e3;
+  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-7803{color:#ffffff;text-align:left;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-7803"><span style="font-weight:700;font-style:normal;text-decoration:none;background-color:transparent">No</span></th>
+    <th class="tg-7803"><span style="font-weight:700;font-style:normal;text-decoration:none;background-color:transparent">Quote</span></th>
+    <th class="tg-7803"><span style="font-weight:700;font-style:normal;text-decoration:none;background-color:transparent">Naive-Bayes</span></th>
+    <th class="tg-7803"><span style="font-weight:700;font-style:normal;text-decoration:none;background-color:transparent">Contractions</span></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">1</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">We'll work to double the number of U.S. military officers serving in peacekeeping operations</span><br><span style="font-weight:400;font-style:normal;text-decoration:underline;color:#000;background-color:transparent">auteur</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">formal</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">informal</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">2</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Nearly 100 years ago, women broke down barriers to the ballot box, moving us closer to a more equal nation. Let's finish what they started.</span><br><span style="font-weight:400;font-style:normal;text-decoration:underline;color:#000;background-color:transparent">auteur</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">formal</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">informal</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">3</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Hillary Clinton I know much better than I know Jeb Bush, and I think she'd be an outstanding president.</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">informal</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">informal </span></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">4</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">At a certain point, if enough states end up decriminalizing, then Congress may reschedule marijuana.</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">formal</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">formal</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">5</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">This guy, who spent 70 years on this earth showing no concern for working people -- this guy is suddenly going to be your champion?</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">informal</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">formal</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">6</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">They got beat up just as good, and they didn't even get the thing done.</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">informal</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">formal</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">7</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">New trade agreements should go hand in hand with support to American workers who've been harmed by trade in the past,</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">formal</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">informal</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">8</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Supreme Leader is a politician, and I guess that's how politicians operate</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">informal</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">formal</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">9</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">A future in which Hiroshima and Nagaski are known not as the dawn of atomic warfare, but as the start of our own moral awakening.</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">formal</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">formal</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">10</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">His administration is trying to focus Americans on what's happening up here,</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">informal</span></td>
+    <td class="tg-0lax"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">informal</span></td>
+  </tr>
+</tbody>
+</table>
+	
+	</center>
+	
+	
+	<p>
+		With these few examples, it is clearly observable that the “Naive-Bayes” model captures much more the informality of the quotes. 
+		Indeed, some quotes are classified as “informal” with the contraction methods and formal by the “Naive-Bayes” method. 
+		These quotes often contain one or more contractions but on the other hand, 
+		some quotes are classified formal with contraction methods and informal with the other. 
+		As the quote no 8, these quotes generally contain one contraction that have been removed in the contraction method 
+		(under the defined threshold) or have a colloquial schema that has only been detected by the supervised machine learning model.
+	</p>
 	
 	
 	
+	<h1>
+		Now that the drawers are full and nicely organized, how to proceed ?
+	</h1>
+	
+	<p>
+		Our relentless quest for information has left us with a very rich set of data, 
+		it is now important to process them wisely to extract the most knowledge possible. 
+		Let's focus on the American politicians, on which we could collect data thanks to the metadata. 
+		The large number of quotes available in quotebank allows us to have a set of 600 000 excerpts of speeches 
+		attributed to American politicians. Let's see what all this data can tell us about the use of informal language 
+		in news articles between 2015 and 2020. 
+		Note that Donald Trump was not represented in the speaker metadata from Wikidata so he will not appear in the further analysis.
+	</p>
+	
+	
+	<p>
+		In order to aggregate political speakers, it was decided to consider only those speakers with more than 50 associated quotes. 
+		The fraction of informal quotes for each speaker is then more representative than taking 
+		into account speakers with a small number of associated quotes.
+	</p>
+	
+	<center><img src="assets/img/fraction_distribution.svg" style="width:1000px"></center>
+	
+	<p>
+		The average familiar fraction with the Naive-Bayes method is much higher than that calculated with the "contractions" method. 
+		In other words, the supervised model captures many more informal citations than the contraction method. 
+		Also, the Naive-Bayes method has a higher dispersion than the contractions method. 
+	</p>
+	
+	<center><img src="assets/img/polAgrregPlot_top10_quotesnumber.svg" style="width:1000px"></center>
+	<br>
+	<center><img src="assets/img/polAgrregPlot_top10_Naive.svg" style="width:1000px"></center>
+	
+	<p>
+		Here, the top 10 speakers with the highest colloquial fraction have been displayed. 
+		It is visible that no politician has a colloquial fraction that stands out from the others.
+	</p>
+	
+	
+	<h1>
+		What best defines an informal speaker?
+	</h1>
+	
+	<p>
+		Now, we need to determine whether there is a statistically significant relationship between the variables. 
+		Relationships, or correlations between variables, are crucial if we want to use the value of one variable 
+		to interpret its influence on the value of another. Let's just start by performing a linear regression on the available dataset. 
+		The results are as follows if we take into account the age, gender and political orientation (democrat or republican) of the speaker. 
+		Let’s see the R² score (coefficient of determination), which is defined as the regression score function 
+		which refers to the fraction of variance explained by the model. 
+		R² is a measure of how closely the observed data points are to the fitted regression line, generally the higher the better:
+	</p>
+	
+	
+	
+	<!-- Table R2 -->
+	<center>
+	
+	<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-621b{background-color:#ffffff;border-color:#ffffff;font-family:Verdana, Geneva, sans-serif !important;;text-align:left;
+  vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-621b"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000">R² score for the linear regression on the contraction method</span></th>
+    <th class="tg-621b"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000">= </span></th>
+    <th class="tg-621b"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000">0.00071</span></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-621b"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000">R² score for the linear regression on the naive bayes method</span></td>
+    <td class="tg-621b"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000">=</span></td>
+    <td class="tg-621b"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000">0.00036</span></td>
+  </tr>
+</tbody>
+</table>
+	
+	</center>
+	
+	
+	<p>
+		The R² obtained is very close to 0, which means that a horizontal line explains the data equally as well as the model, 
+		no variance is explained by the model. This result indicates that linear regression will not work for this type of outcome, 
+		no further investigation will be made with this tool.
+	</p>
+	
+	
+	<h1>
+		Logistic regression to the rescue...
+	</h1>
+	
+	<p>
+		In a binary classification problem, what we are interested in is the probability of an outcome occurring. 
+		In our case, what is the probability that the speaker will use informal language or not according to the chosen features. 
+		Probability is ranged between 0 and 1 and we can then round it to classify the quotes between informal and formal. 
+		The two main reasons why linear regression is not suitable:
+	</p>
+	
+	<ul>
+		<li>the predicted value is continuous, not probabilistic</li>
+		<li>sensitive to imbalance data when using linear regression for classification</li>
+	</ul>
+		
+	<p>
+		For the interpretation of the results it is important to be familiar with log-ods. 
+		A short overview is necessary to understand the results. 
+		Odds are the ratio of something happening to something not happening. 
+		Given the Probability, we can also calculate the Odds with the following expression:
+	</p>
+	
+	
+	
+	<p>	<center> <i>
+	<div class="frac">
+		<span>p</span>
+		<span class="symbol">/</span>
+		<span class="bottom">1-p</span>
+	</div>
+	= <div class="frac">
+		<span>probability that x happen</span>
+		<span class="symbol">/</span>
+		<span class="bottom">probability that x does not happen</span>
+	</div> </i> </center>
+	</p>
+	
+	<p>
+		This makes the magnitude of odds against look so much smaller to those in favor. 
+		So to make it symmetrical we take the log of the odds which will give a fair comparison scale. 
+		The following plots will help to interpret the Logit Function, which is the basis of the logistic 
+		regression used in this analysis
+	</p>
+	
+	
+	<!-- Analysis log ods -->
+	
+	
+	<p>
+		As with the linear regression, age, gender and political orientation are taken into account. 
+		Create a model from a formula and a data frame. 
+		The given formula is of the form:
+	</p>
+	
+	
+	<p> 
+		<center> <i>
+			informal speech = age &#215; &beta;&#8321; &#43; gender &#215; &beta;&#8322; &#43; party &#215; &beta;&#8323;
+		</i> </center> 
+	</p>
+	
+	
+	<p>
+		with the age being normalized, the gender split in two categories (M/F) and political orientation distributed between 
+		the democrat party and the republican party. Now we can visualize the effect of all the features on the outcome:
+	</p>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+ 
+ 
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <h1>
-    Methods : distinguish formal and informal
-  </h1>
-  
-    <h2>
-      A bit of theory
-    </h2>
-  
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at enim dui. Ut imperdiet pulvinar ante, sit amet malesuada lectus suscipit sed. 
-      </p>
-  
-    <h2>
-      Explored ideas
-    </h2>
-  
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at enim dui. Ut imperdiet pulvinar ante, sit amet malesuada lectus suscipit sed. 
-      </p>
-  
-     <h3>
-       1. Slang dictionary
-     </h3>
-    
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at enim dui. Ut imperdiet pulvinar ante, sit amet malesuada lectus suscipit sed. 
-      </p>
-    
-     <h3>
-        2. Wikipedia forbidden contractions
-     </h3>
-    
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at enim dui. Ut imperdiet pulvinar ante, sit amet malesuada lectus suscipit sed. 
-      </p> 
-  
-     <h3>
-        3. Phrasal verbs
-     </h3>
-    
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at enim dui. Ut imperdiet pulvinar ante, sit amet malesuada lectus suscipit sed. 
-      </p>
-    
-  
-  <h1>
-    Results
-  </h1>
-  
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at enim dui. Ut imperdiet pulvinar ante, sit amet malesuada lectus suscipit sed. 
-    </p>
-    
-    
-  <h1>
-    Final outcome
-  </h1>
-  
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In at enim dui. Ut imperdiet pulvinar ante, sit amet malesuada lectus suscipit sed. 
-    </p>
   
   
 </body>  
