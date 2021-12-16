@@ -1052,9 +1052,123 @@ function showSlides(n) {
 	
 	
 	
+	
+	
+	
+	
+	
+	
+	<h1>
+		Let's take a cautious look on the relation between the features
+	</h1>
+	
+	<p>
+		We will simply determine the linear relationship between all the features to determine their independence from each other. 
+		The results are summarized in the table below.
+		The correlation coefficient ranges from −1 to 1. 
+		An absolute value of exactly 1 implies that a linear equation describes the relationship between X and Y perfectly, 
+		with all data points lying on a line (while a value of 0 implies that there is no linear dependency between the variables). 
+		Let’s see what happen with our U.S politicians:
+	</p>
+	
+	<center>
+	
+	<style type="text/css">
+.tg  {border-collapse:collapse;border-color:#93a1a1;border-spacing:0;}
+.tg td{background-color:#fdf6e3;border-color:#93a1a1;border-style:solid;border-width:1px;color:#002b36;
+  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{background-color:#657b83;border-color:#93a1a1;border-style:solid;border-width:1px;color:#fdf6e3;
+  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-fqww{font-family:Verdana, Geneva, sans-serif !important;;font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-gqep{font-family:Verdana, Geneva, sans-serif !important;;text-align:left;vertical-align:top}
+</style>
+<table class="tg" style="undefined;table-layout: fixed; width: 651px">
+<colgroup>
+<col style="width: 159px">
+<col style="width: 300px">
+<col style="width: 192px">
+</colgroup>
+<thead>
+  <tr>
+    <th class="tg-fqww">Variables</th>
+    <th class="tg-fqww">Pearson’s correlation coefficient</th>
+    <th class="tg-fqww">two-tailed p-value*</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-gqep">(bi-party, gender)</td>
+    <td class="tg-gqep">- 0.14</td>
+    <td class="tg-gqep">0.0</td>
+  </tr>
+  <tr>
+    <td class="tg-gqep">(bi-party, age)</td>
+    <td class="tg-gqep">-0.04</td>
+    <td class="tg-gqep">1.17&middot;10&#8315;&#185;&#8311;&#178;</td>
+  </tr>
+  <tr>
+    <td class="tg-gqep">(age, gender)</td>
+    <td class="tg-gqep">0.02</td>
+    <td class="tg-gqep">2.33&middot;10&#8315;&#179;&#8313;</td>
+  </tr>
+</tbody>
+</table>
+	
+	</center>
+	
+	
+	
+	
+	<h1>
+		Correlation yes but who cares ?
+	</h1>
+	
+	<p>
+		The presence of a highly-correlated feature won't affect the final prediction by the model. 
+		However, the estimates of the coefficients may not make sense in some cases. 
+		A regression coefficient measures the change in the outcome per unit change in the feature, will all other features be fixed. 
+		The problem is that correlated predictors change together so it does not make much sense in this case.
+	</p>
+	
+	<p>
+		For the logistic regressions previously presented (Naive-Bayes/ contractions method), the results must be qualified. 
+		The correlation between the features is negligible for gender and age, age and political party but remains important 
+		for gender and political party. 
+		Complementary analyses with the suppression of features that depend too much on each other could be performed. 
+		The tools offered by observational studies could also be used to normalize the sample (propensity score, randomization).  
+		These tools are tools to help draw valid conclusions from found data.
+	</p>
+	
+	
+	
+	
+	
+	<h1>
+		Let's take a step back on this long journey
+	</h1>
+	
+	
+	<!-- TODO : REMPLIR ICI -->
+	
+	
+	<h1>
+		Let's go back to what Mr. Dubuc said
+	</h1>
  
- 
-  
+	<p>
+		While previous generations may have seen dictionaries as guardians and defenders 
+		of the "correct" language, this is no longer the case. 
+		Most major dictionaries now focus on describing the language that people use, 
+		while consciously dispensing with any stifling scholarly objections. 
+		To conclude, we must keep in mind that language is constantly evolving and adapting. 
+		This evolution is manifested in the fact that we find better words that reflect our society or culture. 
+		In particular, it reflects the complexity with which our lives are intertwined with technology. 
+		Our technology is changing faster than ever, and so is our language. 
+		Indeed, just as we do with technology, we seek to optimize language to communicate complex ideas 
+		with the least amount of ambiguity and in the most efficient way possible. 
+		Putting all this in boxes labeled formal/informal may be a bit simplistic of language, but it is still technically fascinating. 
+		This will have allowed us to better understand the hidden treasures of our everyday communication tool.
+	</p>
   
   
 </body>  
