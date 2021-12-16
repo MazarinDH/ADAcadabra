@@ -291,65 +291,84 @@ function showSlides(n) {
 </script>
 
 	
-
+<!-- TODO : Plot timeline quotes -->
 
 	<h1>
-		We need more data !
+		Data about data ? Interesting… let’s check what is available !
 	</h1>
 	
 	<p>
+		Here, we speak about descriptive metadata which is the descriptive information about the quotes. 
 		In order to better characterize where the news articles come from, it  is useful to obtain the source of the quote. 
-		To do this, the web domains of all entry URLs have been extracted and grouped into a domain data frame. The query goes through a 
-		<a href="https://en.wikipedia.org/wiki/WHOIS" target="_blank">WHOIS</a> 
-		server directly instead of going through an intermediate web which increases the efficiency of the retrieval. 
+		To do this, the web domains of all entry URLs have been extracted and grouped into a domain data frame. 
+		The query goes through a WHOIS (lien wiki ou n’importe) server directly instead of going through an intermediate web 
+		which increases the efficiency of the retrieval. 
 	</p>
 
 	<!-- TODO : WHOIS dataplot -->
 	
 	<p>
+		To trace the source of the quotation, one useful indicator could be the organisation registered for the quote’s URL. 
+		We found out that about a third of the quotes appeared in articles whose URLs are detained by ten organisations.
+	</p>
+	
+	<img src="assets/img/metadataPlot_org_pie.svg">
+	<img src="assets/img/metadataPlot_org_top_ten_pie.svg">
+	
+	<p>
+		It can be seen that a large share of the names appearing in the top ten organizations 
+		are services aimed at preserving the anonymity of the companies publishing the citations. 
+		It therefore seems inappropriate to use such a source of information.
+	</p>
+	
+	<p>
+		<b>Geographical indicators</b> can also be used to find the origin of citations. 
+		We have tried to find information on the country, state and city of registration of URLs.
+	</p>
+	
+	<img src="assets/img/metadataPlot_country_pie.svg">
+	
+	<img src="assets/img/metadataPlot_state_pie.svg">
+	
+	<img src="assets/img/metadataPlot_city_pie.svg">
+	
+	<p>
+		We can observe that the United States is the most represented country. 
+		Moreover, all of the nine most recurrent states are U.S. states. 
+		This suggests that focusing on the United States might be a good solution to frame our field of application.
+	</p>
+	
+	<h2>
+		What if we were also interested in the authors of these quotes?
+	</h2>
+	
+	<p>
 		Another important piece of information in the analysis process is to know a little more about the speakers. 
-		For this, <i>Wikidata</i> is a very interesting data source. As American politicians usually have a wikipedia page, information about their age, 
-		political orientation and gender can be easily retrieved automatically using a provided parquet file. 
+		For this, wikidata is a very interesting data source. 
+		As American politicians usually have a wikipedia page, information about their age, political orientation and gender 
+		can be easily retrieved automatically using a provided parquet file. 
 		In order to check the data representativity, the metadata from speakers is used to explore the different main features of speakers. 
 		Taking a random sample of 1 million of quotes, the following  distribution can be drawn : 
 	</p>
-
-
-TEST container with style 1250 + country pie
-
-<style>
-* {box-sizing: border-box}
-body {font-family: Verdana, sans-serif; margin:0}
-.mySlides {display: none}
-img {vertical-align: middle;}
-
-/* Container */
-.container {
-  max-width: 1250px;
-  position: relative;
-  margin: auto;
-}
-</style>
-<div class="container">
-	<img src="assets/img/metadataPlot_nationality_pie.svg" width="1250px">
-</div>
-
-
-
+	
+	
+	<img src="assets/img/metadataPlot_nationality_pie.svg">
 	<img src="assets/img/metadataPlot_occupation_pie.svg">
 	
-	<img src="assets/img/metadataPlot_country_pie.svg">
-
+	
 	<p>
 		The “US” nationality and the “politician” occupation seems to be predominant. 
 		Also, one might think that the use of informal language is less present in the political world than elsewhere. 
-		It would therefore be interesting to look more closely at this category of speakers.
+		It would therefore be interesting to look more closely at this category of speakers
 	</p>
 	
 	<p>
 		Thus, the decision to focus on <b>American politicians</b> has been taken. 
 		The quotes from this category of the population will be used to analyze the results of informal/formal classification techniques.
 	</p>
+	
+	
+	
 	
 	
 	<h1>
