@@ -592,17 +592,52 @@ function showSlides(n) {
 		Crowdsourcing has a lot of potential for such a task, because if enough people give their opinion then we will get closer to groundtruth.  
 		However, this method was not chosen due to lack of time and resources, so a mini crowdsourcing within the group was carried out. 
 		In total, four hundred randomly selected quotes have been labeled by the 4 members of the research group. 
-		The following results can be observed for the classification according to contractions. TEST CENTER
+		The following results can be observed for the classification according to contractions. 
 	</p>
   
 	
 	<center><img src="assets/img/contraction_cfmatrix.svg" style="max-width:600px"></center>
   
   
+	<p>
+		To fully understand how the model performs, we need accuracy metrics
+	</p>
   
-  
-  
-  
+<!-- Table with metric -->
+	<style type="text/css">
+.tg  {border-collapse:collapse;border-color:#93a1a1;border-spacing:0;}
+.tg td{background-color:#fdf6e3;border-color:#93a1a1;border-style:solid;border-width:1px;color:#002b36;
+  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{background-color:#657b83;border-color:#93a1a1;border-style:solid;border-width:1px;color:#fdf6e3;
+  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-yr59{color:#ffffff;font-family:Verdana, Geneva, sans-serif !important;;font-style:italic;font-weight:bold;text-align:left;
+  vertical-align:top}
+.tg .tg-gqep{font-family:Verdana, Geneva, sans-serif !important;;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+    <th class="tg-yr59" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;background-color:transparent">Producer's accuracy</span></th>
+    <th class="tg-yr59" colspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;background-color:transparent">User's accuracy</span></th>
+    <th class="tg-yr59"><span style="font-weight:400;font-style:normal;text-decoration:none;background-color:transparent">Overall accuracy</span></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Formal</span></td>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">95.28%</span></td>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Formal</span></td>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">60.30%</span></td>
+    <td class="tg-gqep" rowspan="2"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">64.25%</span></td>
+  </tr>
+  <tr>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Colloquial</span></td>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">29.26%</span></td>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">Colloquial</span></td>
+    <td class="tg-gqep"><span style="font-weight:400;font-style:normal;text-decoration:none;color:#000;background-color:transparent">84.62%</span></td>
+  </tr>
+</tbody>
+</table>
   
   
   
