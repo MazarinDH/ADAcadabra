@@ -681,17 +681,54 @@ function showSlides(n) {
   
 	<p>
 		First of all, less than 65% of the quotes are classified in the correct class as we are told by the Overall accuracy. 
-		This is probably better than random label attribution as we would get an Overall accuracy close to 50%. 
-		However, this tells us that the model is not really suited to assess the colloquial language question. 
-		To understand what does and does not work, let’s take a look at the other computed accuracies. <br>
-		The Producer’s accuracies show that real formal quotations are usually labelled correctly (in 95.28% of the cases), 
-		while real colloquial ones are often mistaken by the model for formal quotes.<br>
-		On the other hand, the User’s accuracies show that predictions stating 
-		that a quote is colloquial are right in 84.62% and only about 60% of the formal predictions are actually formal quotes.
+		This is probably better than random label attribution as we would get an Overall accuracy of close to 50%. 
+		However, this tells us that the model is not suited to assess the colloquial language question. 
+		To understand what does and does not work, let’s take a look at the other computed accuracies.
 	</p>
   
-  
-	<!-- TODO : FINISH THIS PART -->
+	<p>
+		The Producer’s accuracies show that real formal quotations are usually labeled correctly (in 95.28% of the cases), 
+		while real colloquial ones are often mistaken by the model for formal quotes.
+	</p>
+
+	<p>
+		Here is an example of an informal quote mistaken for a formal one because of the absence of contractions:
+	</p>
+ 
+	
+	<p>
+		<i>Enough. Enough. Call Loretta Lynch for a vote. Get her confirmed. Put her in place. Let her do her job. 
+		This is embarrassing, a process like that.
+		<br><b>Barack Obama</b></i>
+	</p>
+ 
+ 
+	<p>
+		On the other hand, the User’s accuracies show that only about 60% of the formal predictions are actually formal quotes, 
+		but predictions stating that a quote is colloquial are usually right (in 84.62% of the cases), such as in this example :
+	</p>
+ 
+	<p>
+		<i><b>I'd</b> like to think that <b>I've</b> been pretty aware of the unique challenges women face -- it's what has shaped my own feminism.
+		<br><b>Barack Obama</b></i>
+	</p>
+ 
+	<p>
+		(the contraction that has been captured are indicated in bold, 
+		note that “it’s” is not captured as it was removed from the corpus 
+		because of its occurrence fraction that was larger than 2%)<br>
+		The errors produced by the methods have a rather simple explanation : <br>
+		Contractions are only one of the characteristics of informal language. 
+		Note here that it seems to be a valid characteristic as colloquial predictions are usually true 
+		(User’s accuracy - colloquial). 
+		However, the method lacks information to fully apprehend the concept of colloquial language. 
+		The quotes that have been wrongly predicted as formal probably had other colloquial aspects such as phrasal verbs, 
+		specific words, or structure. <br>
+		Now, how can the classification method be improved to capture many more informal aspects, and by extent, citations?
+	</p>
+ 
+
+ 
  
  
  
@@ -701,14 +738,41 @@ function showSlides(n) {
 	
 	<p>
 		Yes, ok, the method taking into account the detection of slang words was already naive 
-		and showed its inability to do the job of classification in an appropriate way. 
+		and showed its inability to do the job of classification appropriately. 
 		However, from now on we talk about a classification method well known by data analysts: 
 		<b>naive bayes classification</b> <br>
 		This is a family of simple "probabilistic classifiers" based on applying 
 		<a href="https://en.wikipedia.org/wiki/Bayes%27_theorem" target="_blank">Bayes' theorem</a> 
 		with strong (and of course, naïve) independence assumptions between the features.
+		This type of classification is used for sentiment analysis, 
+		and application of natural language processing, which tells whether a quotation is positive or negative. 
+		By slightly modifying the process, it becomes possible to teach the model to separate quotes in formal and informal classes. 
+		This method offers the advantage to take into account more characteristics of informal and formal language than the other ones.
 	</p>
  
+	<p>
+		To do so, the model needs a large amount of training data. 
+		Thankfully, some websites offer large corpora of English text from various origins. 
+		Two datasets have been retrieved from the <a href="https://www.corpusdata.org/formats.asp" target="_blank">corpusdata.org</a> website, 
+		one set of about two million words for each language style. 
+		The informal dataset text comes from transcripted American soap operas, 
+		this way one can be pretty sure it will not be great literature. 
+		The other one is made of Wikipedia paragraphs, whose strict formalism is forced by the Wikipedia 
+		<a href="https://en.wikipedia.org/wiki/Wikipedia:Manual_of_Style" target="_blank">manual of style</a>. 
+		Each of these corpora is divided in sentences using punctuation tokenization, 
+		which are divided into unigrams using work tokenization. 
+		Most common unigrams are stored in a feature vector. 
+		By checking if unigrams are present in each quote, a bag-of-words matrix that states 
+		which feature unigrams are present (columns) in each quote (lines) is made. 
+		The model is then trained using this matrix and the “formal” or “informal” labels corresponding to each matrix line. 
+		The trained model offers an overall accuracy of 90% on the test set. Once the model is trained, 
+		it can be saved and used on future tokenized sentences. 
+	</p>
+	
+	<p>
+		Using the same ground truths as in the contraction method, 
+		the classification using the Naive Bayes method provides the following results :
+	</p>
 	
  
 	<center><img src="assets/img/NBC_cfmatrix.svg" style="max-width:600px"></center>
@@ -860,7 +924,7 @@ function showSlides(n) {
 
 	
 	<p>
-		With these few examples, it is clearly observable that the “Naive-Bayes” model captures much more the informality of the quotes. 
+		With these few examples, it is observable that the “Naive-Bayes” model captures much more the informality of the quotes. 
 		Indeed, some quotes are classified as “informal” with the contraction methods and formal by the “Naive-Bayes” method. 
 		These quotes often contain one or more contractions but on the other hand, 
 		some quotes are classified formal with contraction methods and informal with the other. 
@@ -878,17 +942,18 @@ function showSlides(n) {
 		Our relentless quest for information has left us with a very rich set of data, 
 		it is now important to process them wisely to extract the most knowledge possible. 
 		Let's focus on the American politicians, on which we could collect data thanks to the metadata. 
-		The large number of quotes available in quotebank allows us to have a set of 600 000 excerpts of speeches 
-		attributed to American politicians. Let's see what all this data can tell us about the use of informal language 
-		in news articles between 2015 and 2020. 
-		Note that Donald Trump was not represented in the speaker metadata from Wikidata so he will not appear in the further analysis.
+		The large number of quotes available in quotebank allows us to have a set of 600 000 excerpts 
+		of speeches attributed to American politicians. 
+		Let's see what all this data can tell us about the use of informal language in news articles between 2015 and 2020. 
+		Note that Donald Trump was not represented in the speaker metadata from Wikidata. 
+		Therefore, he will not appear in the further analysis.
 	</p>
 	
 	
 	<p>
-		In order to aggregate political speakers, it was decided to consider only those speakers with more than 50 associated quotes. 
-		The fraction of informal quotes for each speaker is then more representative than taking 
-		into account speakers with a small number of associated quotes.
+		To aggregate political speakers, it was decided to consider only those speakers with more than 50 associated quotes. 
+		The fraction of informal quotes for each speaker is then more representative 
+		than taking into account speakers with a small number of associated quotes.
 	</p>
 	
 	<center><img src="assets/img/fraction_distribution.svg" style="width:1000px"></center>
