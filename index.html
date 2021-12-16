@@ -603,7 +603,7 @@ function showSlides(n) {
 		To fully understand how the model performs, we need accuracy metrics
 	</p>
   
-<!-- Table with metric -->
+<!-- Table with metric --><center>
 	<style type="text/css">
 .tg  {border-collapse:collapse;border-color:#93a1a1;border-spacing:0;}
 .tg td{background-color:#fdf6e3;border-color:#93a1a1;border-style:solid;border-width:1px;color:#002b36;
@@ -638,11 +638,25 @@ function showSlides(n) {
   </tr>
 </tbody>
 </table>
+</center> 
+ 
+ 
   
   
+	<h1>
+		What do these numbers tell us?
+	</h1>
   
-  
-  
+	<p>
+		First of all, less than 65% of the quotes are classified in the correct class as we are told by the Overall accuracy. 
+		This is probably better than random label attribution as we would get an Overall accuracy close to 50%. 
+		However, this tells us that the model is not really suited to assess the colloquial language question. 
+		To understand what does and does not work, let’s take a look at the other computed accuracies. <br>
+		The Producer’s accuracies show that real formal quotations are usually labelled correctly (in 95.28% of the cases), 
+		while real colloquial ones are often mistaken by the model for formal quotes.<br>
+		On the other hand, the User’s accuracies show that predictions stating 
+		that a quote is colloquial are right in 84.62% and only about 60% of the formal predictions are actually formal quotes.
+	</p>
   
   
   
