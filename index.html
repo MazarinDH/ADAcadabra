@@ -316,8 +316,8 @@ function showSlides(n) {
 		Here, we speak about descriptive metadata which is the descriptive information about the quotes. 
 		In order to better characterize where the news articles come from, it  is useful to obtain the source of the quote. 
 		To do this, the web domains of all entry URLs have been extracted and grouped into a domain data frame. 
-		The query goes through a WHOIS (lien wiki ou n’importe) server directly instead of going through an intermediate web 
-		which increases the efficiency of the retrieval. 
+		The query goes through a <a href="https://en.wikipedia.org/wiki/WHOIS" tagret="_blank">WHOIS</a> server directly instead of 
+		going through an intermediate web which increases the efficiency of the retrieval. 
 	</p>
 
 	<!-- TODO : WHOIS dataplot -->
@@ -387,11 +387,11 @@ function showSlides(n) {
 	
 	<p>
 		Another important piece of information in the analysis process is to know a little more about the speakers. 
-		For this, wikidata is a very interesting data source. 
-		As American politicians usually have a wikipedia page, information about their age, political orientation and gender 
-		can be easily retrieved automatically using a provided parquet file. 
-		In order to check the data representativity, the metadata from speakers is used to explore the different main features of speakers. 
-		Taking a random sample of 1 million of quotes, the following  distribution can be drawn: 
+		For this, Wikidata is a very interesting data source. 
+		As American politicians usually have a Wikipedia page, information about their age, political orientation, 
+		and gender can be easily retrieved automatically using a provided parquet file.<br>
+		To check the data representativity, the metadata from speakers is used to explore the different main features of speakers. 
+		Taking a random sample of 1 million quotes, the following  repartitions can be drawn:
 	</p>
 	
 
@@ -405,20 +405,16 @@ function showSlides(n) {
 </div>		
 	
 	
-	
-	
-	
 	<p>
-		The “US” nationality and the “politician” occupation seems to be predominant. 
-		Also, one might think that the use of informal language is less present in the political world than elsewhere. 
-		It would therefore be interesting to look more closely at this category of speakers
+		American nationality and the profession of 'politician' seem to be predominant. 
+		Moreover, one might think that the use of informal language is less present in the political world than elsewhere. 
+		It would therefore be interesting to look more closely at this category of speakers.
 	</p>
 	
 	<p>
-		Thus, the decision to focus on <b>American politicians</b> has been taken. 
-		The quotes from this category of the population will be used to analyze the results of informal/formal classification techniques.
+		Thus, the decision was made to focus on American politicians. 
+		Quotes from this category of the population will be used to analyze the results of the informal/formal classification techniques.
 	</p>
-	
 	
 	
 	
@@ -428,7 +424,8 @@ function showSlides(n) {
 	</h1>
 	
 	<p>
-		Now that we have a solid, clean and consistent database, let's tackle the difficult question: 
+		Now that we have a solid, clean, and consistent database, with additional valuable information about it, 
+		let's tackle the difficult question: 
 	</p>
 	
 	<p>
@@ -438,7 +435,7 @@ function showSlides(n) {
   
 	<p>
 		Formal and informal language serve different purposes in written communications. 
-		The tone, the choice of words and the way the words are put together vary between the two different styles. 
+		The tone, the choice of words, and the way the words are put together vary between the two different styles. 
 		Globally we can observe the following key facts:
 	</p>
   
@@ -449,9 +446,9 @@ function showSlides(n) {
   
 	<p>
 		These statements are quite general and define the difference between the two styles. 
-		However, implementing an algorithm from these elements seems a difficult task. 
-		More precise markers must be defined in order to facilitate the automatic processing of the quotes to be classified. 
-		In order to characterize the style of the language, it is important to focus on precise markers, easier to identify in natural language. 
+		However, implementing an algorithm from these elements seems to be a difficult task. 
+		More precise markers must be defined to facilitate the automatic processing of the quotes to be classified. 
+		To characterize the style of the language, it is important to focus on precise markers, easier to identify in natural language. 
 		The following points are commonly accepted as best characterizing informal style:
 	</p>
   
@@ -461,7 +458,8 @@ function showSlides(n) {
 	
 	<p>
 		Often, slang terms are considered vulgar or offensive to use in polite conversation. 
-		Its use implies that the user is familiar with whatever is referred to, or with a group of people who are familiar with it and use the term. 
+		Its use implies that the user is familiar with whatever is referred to, 
+		or with a group of people who are familiar with it and use the term. 
 		It often replaces a well-known conventional synonym.
 	</p>
 	
@@ -471,7 +469,7 @@ function showSlides(n) {
 	
 	<p>
 		A contraction is a shortened form of a word (or group of words) that omits certain letters or sounds. 
-		They are common in speech and in informal writing, but tend to be avoided in more formal writing.
+		They are common in speech and informal writing, but tend to be avoided in more formal speeches.
 	</p>
 	
 	<h3>
@@ -489,12 +487,12 @@ function showSlides(n) {
 	</h3>
 	
 	<p>
-		Personal pronouns that refer to the author or authors – I, we, my, etc. 
+		Personal pronouns that refer to the author or authors (I, we, my, etc.) 
 		The norm in the academic field tends to banish it to maintain an objective, 
 		impersonal tone and keep the focus on the material rather than the author. 
-		When it comes to giving your opinion, as in politics, 
-		the impersonal tone is to keep the focus on the material rather than the author seems not to apply. 
-		For this reason, this criterion will not be used for the analysis of quotes from American politics.
+		When it comes to giving your opinion, as in politics, the impersonal tone is to keep 
+		the focus on the material rather than the author. For this reason, this criterion will not be used 
+		for the analysis of quotes from American politics.
 	</p>
   
   
@@ -512,16 +510,18 @@ function showSlides(n) {
 	</h1>
   
 	<p>
-		To detect <b>slang words</b> you just have to take a database listing them and test each quote. 
-		If the word is present the quote is tagged as informal. 
-		To do this the formal word dictionary was imported from Urban dictionary. 
+		To detect <b>slang words</b>, you just have to take a set of quotes, list them and test each quote. 
+		If the word is present in the quote, it is tagged as informal. 
+		To do this, the formal word dictionary was imported from the Urban dictionary. 
 		Urban Dictionary is a dictionary of slang or cultural words and phrases, not typically found in standard dictionaries. 
-		About 20’000 words have been analyzed and the most common detected ones removed from the list to avoid a too high false positive rate. 
+		About 20’000 words have been analyzed and the most commonly detected ones removed from the list 
+		to avoid a too high false-positive rate. 
 		The biggest problem with this method is that it is too arbitrary. 
-		It is true that the words taken into account come from Urban dictionary, 
-		known as the reference for slang words, but as explained above a threshold must be introduced to avoid including words that are too frequent. 
-		The choice was to keep only the word of the dictionary that appears in 0.1% of the quotes. 
-		Some words from the urban dictionary are widely used nowadays even with this low threshold which makes the classification not very robust.
+		The words taken into account indeed come from Urban dictionary, known as the reference for slang words, 
+		but (as explained above) a threshold must be introduced to avoid including words that are too frequent. 
+		The choice was to keep only the word of the dictionary that appears in <b>0.1%</b> of the quotes. 
+		Some words from the urban dictionary are widely used nowadays even with this low threshold 
+		which makes the classification not very robust.
 	</p>
 	
 	<!-- Table wich words occurencies --> 
@@ -599,21 +599,32 @@ function showSlides(n) {
   
   
 	<p>
-		As said in the theory, <b>contractions</b> are perfectly standard, but they’re usually considered to be relatively casual. 
-		To account for that, a list of banned contractions that should be avoided when writing a wikipedia page is available. 
-		This dataset is an illustrative, but non exhaustive list of contractions discriminating informal language.
+		As said in the theory, contractions are perfectly standard, but they’re usually considered to be relatively casual. 
+		To account for that, a list of banned contractions that should be avoided when writing a Wikipedia page is available. 
+		This dataset is illustrative, but non-exhaustive list of contractions discriminating informal language. 
+		Once the corpus of contractions is created, it is possible to check whether each quote contains at least one of the contractions. 
+		Most recurrent contractions are removed from the discriminative corpus in a similar way 
+		as in the slang detection method (using a threshold of 2%). <br>
+		Tokenization has not been performed on the quotes as it did not apply well to contractions 
+		since they are usually made of more than one tokens. 
+		As an example, the contraction “can’t” consists of tokens “can” and “n’t” 
+		but the presence of these tokens in a quote does not ensure that the word “can’t” is present.
 	</p>
   
 	<p>
-		To qualify the performance of the classification, it is necessary to compare it with a groundtruth. 
+		To qualify the performance of the classification, it is necessary to compare it with ground-truth. 
 		The problem is that there is no clear criterion to characterize whether a quote is formal or informal. 
-		The subjectivity of the qualifier "informal" makes the task of setting labels difficult.  
-		Crowdsourcing has a lot of potential for such a task, because if enough people give their opinion then we will get closer to groundtruth.  
-		However, this method was not chosen due to lack of time and resources, so a mini crowdsourcing within the group was carried out. 
+		The subjectivity of the qualifier "informal" makes the task of setting labels difficult. 
+		Crowdsourcing has a lot of potential for such a task, because if enough people give their opinion 
+		then we will get closer to ground-truth. 
+		However, this method was not chosen due to a lack of time and resources, 
+		then a pseudo-crowdsourcing within the group was carried out. 
 		In total, four hundred randomly selected quotes have been labeled by the 4 members of the research group. 
-		The following results can be observed for the classification according to contractions. 
 	</p>
   
+	<p>
+		The following results can be observed for the classification according to contractions:
+	</p>
 	
 	<center><img src="assets/img/contraction_cfmatrix.svg" style="max-width:600px"></center>
   
