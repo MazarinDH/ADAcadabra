@@ -6,7 +6,26 @@ cover-img: "assets/img/congress.jpg"
 ---
 
 <html>
-	
+
+<style>
+.frac {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    letter-spacing: 0.001em;
+    text-align: center;
+}
+.frac > span {
+    display: block;
+    padding: 0.1em;
+}
+.frac span.bottom {
+    border-top: thin solid black;
+}
+.frac span.symbol {
+    display: none;
+} 
+</style>	
 
 	
 <body> 	
@@ -958,13 +977,15 @@ function showSlides(n) {
 	
 	
 	
+	<p>
+		ODDS = 
+	ODDS = <div class="frac">
+		<span>p</span>
+		<span class="symbol">/</span>
+		<span class="bottom">1-p</span>
+	</div>
 	
-	
-	
-	
-	
-	
-	
+	</p>
 	
 	
 	
