@@ -502,8 +502,8 @@ function showSlides(n) {
 		About 20’000 words have been analyzed and the most commonly detected ones removed from the list 
 		to avoid a too high false-positive rate. 
 		The biggest problem with this method is that it is too arbitrary. 
-		The words taken into account indeed come from Urban dictionary, known as the reference for slang words, 
-		but a threshold must be introduced to avoid including words that are too frequent. 
+		The words taken into account indeed come from Urban dictionary, known as the reference for slang words. 
+		A threshold must be introduced to avoid including words that are too frequent. 
 		The choice was to keep only the words of the dictionary that appear in less than <b>0.1%</b> of the quotes. 
 		Some words from the urban dictionary are widely used nowadays even with this low threshold 
 		which makes the classification not very robust.
@@ -585,7 +585,8 @@ function showSlides(n) {
   
 	<p>
 		As said in the theory, contractions are perfectly standard, but they’re usually considered to be relatively casual. 
-		To account for that, a list of banned contractions that should be avoided when writing a Wikipedia page is available. 
+		To account for that, a list of banned contractions that should be avoided when writing a Wikipedia page is 
+		<a href="https://en.wikipedia.org/wiki/Wikipedia:List_of_English_contractions" target="_blank">available</a>. 
 		This dataset is illustrative, but non-exhaustive list of contractions discriminating informal language. 
 		Once the corpus of contractions is created, it is possible to check whether each quote contains at least one of the contractions. 
 		Most recurrent contractions are removed from the discriminative corpus in a similar way 
@@ -933,7 +934,6 @@ function showSlides(n) {
 	</center>
 	
 
-	
 	<p>
 		With these few examples, it is observable that the “Naive-Bayes” model captures much more the informality of the quotes. 
 		Indeed, some quotes are classified as “informal” with the contraction methods and formal by the “Naive-Bayes” method. 
@@ -945,19 +945,18 @@ function showSlides(n) {
 	</p>
 	
 	
-	
 	<h1>
 		Now that the drawers are full and nicely organized, how to proceed ?
 	</h1>
 	
 	<p>
 		Our relentless quest for information has left us with a very rich set of data, 
-		it is now important to process them wisely to extract the most knowledge possible. 
+		it is now important to process them wisely to extract as much knowledge as possible. 
 		Let's focus on the American politicians, on which we could collect data thanks to the metadata. 
 		The large number of quotes available in quotebank allows us to have a set of 600 000 excerpts 
 		of speeches attributed to American politicians. Let's see what all this data can tell us 
 		about the use of informal language in news articles <b>between 2015 and 2020</b>. 
-		Note that Donald Trump was not represented in the speaker metadata from Wikidata. 
+		Note that Donald Trump (know for his very informal speeches) was not represented in the speaker metadata from Wikidata. 
 		Therefore, he will not appear in the further analysis.
 	</p>
 	
