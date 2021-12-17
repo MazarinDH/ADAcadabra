@@ -70,7 +70,7 @@ cover-img: "https://www.americangrit.com/wp-content/uploads/2017/10/congress006-
   
     <p>
 		Quotebank is the main data source for this project.  
-		It is derived from the work of the ... of EPFL in collaboration with Stanford University. 
+		It is derived from the work of EPFL in collaboration with Stanford University. 
 		Quotebank is an open corpus of 178 million quotations attributed to the speakers who uttered them. 
 		The data has been extracted from 162 million English-language news articles published between 2008 and 2020. 
 		To obtain a corpus of that scale the team of the 
@@ -132,7 +132,7 @@ cover-img: "https://www.americangrit.com/wp-content/uploads/2017/10/congress006-
 	
 	<p>
 		<b>Data wrangling</b> is therefore necessary. 
-		The idea is not to keep all the quotes for the sake of uncertainty. 
+		The idea is not to keep all the quotes for the sake of certainty about the speaker. 
 		The following deletion criteria have been applied:
 	</p>
 
@@ -318,7 +318,7 @@ function showSlides(n) {
 	</h1>
 	
 	<p>
-		Here, we speak about descriptive metadata which is the descriptive information about the quotes. 
+		Here, we speak about metadata which is the descriptive information about the quotes. 
 		In order to better characterize where the news articles come from, it  is useful to obtain the source of the quote. 
 		To do this, the web domains of all entry URLs have been extracted and grouped into a domain data frame. 
 		The query goes through a <a href="https://en.wikipedia.org/wiki/WHOIS" tagret="_blank">WHOIS</a> server directly instead of 
@@ -341,7 +341,7 @@ function showSlides(n) {
 	<p>
 		It can be seen that a large share of the names appearing in the top ten organizations 
 		are services aimed at preserving the anonymity of the companies publishing the citations. 
-		It therefore seems inappropriate to use such a source of information.
+		Therefore, this source of information does not seem really interesting except if you are into conspiracy theories.
 	</p>
 	
 	<p>
@@ -368,7 +368,7 @@ function showSlides(n) {
 	
 	<p>
 		Another important piece of information in the analysis process is to know a little more about the speakers. 
-		For this, <a href="https://www.wikidata.org/wiki/Wikidata:Main_Page" target="_blank">Wikidata</a> is a very interesting data source. 
+		To achieve this task,<a href="https://www.wikidata.org/wiki/Wikidata:Main_Page" target="_blank">Wikidata</a> is a very interesting data source. 
 		As American politicians usually have a Wikipedia page, information about their age, 
 		political orientation, and gender can be easily retrieved automatically using a provided parquet file.
 	</p>
@@ -425,8 +425,8 @@ function showSlides(n) {
 	</p>
   
 	<ul>
-	  <li>Formal language is less personal than informal language.</li>
-	  <li>Informal language is more casual and spontaneous.</li>
+	  <li><b>Formal language</b> is less personal than informal language.</li>
+	  <li><b>Informal language</b> is more casual and spontaneous.</li>
 	</ul>
   
 	<p>
@@ -438,12 +438,12 @@ function showSlides(n) {
 	</p>
   
 	<h3>
-		<b>Slang or colloquialism</b>
+		<b>Slang vocabulary</b>
 	</h3>
 	
 	<p>
 		Often, slang terms are considered vulgar or offensive to use in polite conversation. 
-		Its use implies that the user is familiar with whatever is referred to, 
+		Slang use implies that the user is familiar with whatever is referred to, 
 		or with a group of people who are familiar with it and use the term. 
 		It often replaces a well-known conventional synonym.
 	</p>
@@ -503,7 +503,7 @@ function showSlides(n) {
 		to avoid a too high false-positive rate. 
 		The biggest problem with this method is that it is too arbitrary. 
 		The words taken into account indeed come from Urban dictionary, known as the reference for slang words, 
-		but (as explained above) a threshold must be introduced to avoid including words that are too frequent. 
+		but a threshold must be introduced to avoid including words that are too frequent. 
 		The choice was to keep only the words of the dictionary that appear in less than <b>0.1%</b> of the quotes. 
 		Some words from the urban dictionary are widely used nowadays even with this low threshold 
 		which makes the classification not very robust.
