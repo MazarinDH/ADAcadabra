@@ -1281,7 +1281,45 @@ function showSlides(n) {
 	</h1>
 	
 	
-	<!-- TODO : REMPLIR ICI -->
+	<ul>
+		<li>The first conclusion to draw from this adventure is the difficulty of handling large databases.
+		The Quotebank dataset provides a good opportunity to experiment with the problems that arise with such a large volume of data. 
+		It was difficult to define a clear pipeline of coding steps at the beginning of the project, as the success of each step 
+		(e.g. the classification step) was not guaranteed. 
+		As a result, a rigorous organisation with precise processes proved to be essential to successfully keep the project on track.<br>
+		Admittedly, quotebank contains a relatively small amount of data compared to the tech giants who collect and process far more of it. 
+		However, the size of the entire dataset does not fit in the memory of a standard laptop, a problem for which solutions are available. 
+		For large-scale data processing, <b>parallelization</b> and <b>fault tolerance</b> are key points to succeed. 
+		The use of a library like <a href="https://spark.apache.org/docs/latest/api/python/" target="_blank">Apache Spark</a> 
+		(an open-source unified analytics engine) allows you to scale the data frame workload out. 
+		Extended work on the subject would certainly require diving into the documentation of this kind 
+		of tool before optimizing the workflow and extending the possible analyses in a reasonable time.
+		</li>
+		<li>Then, it has been stated that the separation between formal and informal language is relatively a hard task. 
+		Indeed, the overall accuracy of the supervised model (about 75%) is not very satisfying. 
+		One could think to use segmentation models but that would imply much more complexity in building the model.<br>
+		Also, it could be great to refer to more solid statements about informal quotes to better identify 
+		which characteristics in syntax are the most important for such classification.
+		</li>
+		<li>Logistic regression gives different results regarding the influence of age and sex, 
+		but they agree on the influence of political orientation. 
+		This again highlights the difficulty of classifying the quotes and would require further investigation.
+		</li>
+	</ul>
+	
+	<p>
+		To resume, <a href="https://en.wikipedia.org/wiki/Natural_language_processing" target="_blank">Natural Language Processing</a> (NLP) 
+		is considered a difficult problem in computer science. 
+		It has been very rewarding to do a data analysis project integrating each step of the process 
+		(data wrangling, analysis, interpretation) but starting with NLP is quite a challenge. 
+		While humans can easily master a language, the ambiguity and imprecise characteristics of the natural languages are what make 
+		NLP difficult for machines to implement. An essential concept in any data analysis 
+		can be summarized by the very informal phrase: 
+		<a href="https://www.urbandictionary.com/define.php?term=garbage-in%2C%20garbage-out" target="_blank">“garbage in garbage out“</a>. 
+		In order to draw solid conclusions it is essential to be able to rely on proven data wrangling and robust classification. 
+		The possibilities for improvement are numerous and the experience gained 
+		during this project will help avoid certain pitfalls in future projects.
+	</p>
 	
 	
 	<h1>
