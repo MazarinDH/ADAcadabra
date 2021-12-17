@@ -1156,12 +1156,42 @@ function showSlides(n) {
 		According the above visualization we can state that:
 	</p>
 	
+	<ul>
+		<li>Age and the political side (in fact being democrat) are significant negative predictors of colloquialism use.</li>
+		<li>In a lesser extent gender (in fact being a men) is a  positive predictors of colloquialism use.</li>
+	</ul>
 	
 	
+	<p>
+		Since all predictors are standardized, we can interpret in the following way:
+	</p>
 	
+	<ul><li>When all other predictors take mean values, an increase of age by 1 standard deviation (12 year), leads on average 
+	to a decrease by 0.0286 of log odds of colloquialism use.</li></ul>
 	
+	<p>
+		Now if we look at the same plot for the <b>naive bayes classification</b>:
+	</p>
 	
+	<img src="assets/img/nb_errorbar.svg">
 	
+	<p>
+		We can state that:
+	</p>
+	
+	<ul>
+		<li>Gender and the political side are significant negative predictors of colloquialism use.</li>
+		<li>In a lesser extent age is a significative positive predictors of colloquialism use.</li>
+	</ul>
+	
+	<p>
+		Since all predictors are standardized, we can interpret in the following way:
+	</p>
+	
+	<ul><li>When all other predictors take mean values, an increase of age by 1 standard deviation (12 year), 
+	leads on average to an increase by 0.088 of log odds of colloquialism use.</li></ul>
+	
+
 	<h1>
 		Let's take a cautious look on the relation between the features
 	</h1>
@@ -1242,7 +1272,16 @@ function showSlides(n) {
 	</p>
 	
 	
-	<!-- TODO REMPLIR ICI -->
+	<p>
+		We observe that the null hypothesis can be rejected for all pairs of features. 
+		The most correlated variables are gender and political orientation. 
+		More women are affiliated to the Democratic party as in the Republican one. 
+		So far this cycle, according to the 
+		Center for Women and American Politics at 
+		<a = href="https://cawp.rutgers.edu/facts/current-numbers" target="_blank">Rutgers University</a>, 
+		350 Democratic women have filed to run for the House, compared with 118 Republican women. 
+		Democratic women have won 105 House primaries, compared with just 25 by Republican women.
+	</p>
 	
 	
 	<h1>
@@ -1258,15 +1297,13 @@ function showSlides(n) {
 	
 	<p>
 		For the logistic regressions previously presented (Naive-Bayes/ contractions method), the results must be qualified. 
-		The correlation between the features is negligible for gender and age, age and political party but remains important 
-		for gender and political party. 
+		The correlation between the features is negligible for gender and age, age and political party 
+		but remains important for gender and political party. 
 		Complementary analyses with the suppression of features that depend too much on each other could be performed. 
-		The tools offered by observational studies could also be used to normalize the sample (propensity score, randomization).  
+		The tools offered by observational studies could also be used to normalize the sample 
+		(propensity score, randomization). 
 		These tools are tools to help draw valid conclusions from found data.
 	</p>
-	
-	
-	
 	
 	
 	<h1>
