@@ -52,14 +52,16 @@ cover-img: "https://www.americangrit.com/wp-content/uploads/2017/10/congress006-
       
 	<p>
       Some people easily complain about the "decline of language", about a decrease in the quality of style in the media. 
-      Certainly, the digital change is also accompanied by a fundamental revolution in the use of media 
-      at the expense of professional news media. This is accompanied by a growing preference for audiovisual platforms. 
-      Videos are rewarded with particularly high user response rates and are favored by the algorithms of technology intermediaries. 
+      Certainly, the digital change is also accompanied by a fundamental revolution 
+      in the use of media at the expense of professional news media. 
+      This is accompanied by a growing preference for audiovisual platforms. 
+      Videos are rewarded with particular response rates and are favored by the algorithms of technology intermediaries. 
       The media have a large responsibility in the evolution of language since written and spoken media (TV and radio) 
-      produce a lot of language material. The goal of this project is to successfully classify quotes from American newspapers to determine their style. 
-      The database on which this analysis was conducted contains quotes from American politicians from 2015 to 2020 in news articles. 
-      An analysis on the evolution of informal language use is difficult on such a short time step 
-      but if the method shows a good classification potential then the analysis could be conducted on a larger dataset. 
+      produce a lot of language material. The goal of this project is to successfully classify quotes 
+      from American newspapers to determine their style. The database on which this analysis was conducted contains 
+      quotes from American politicians from 2015 to 2020 in news articles. 
+      An analysis of the evolution of informal language use is difficult in such a short time step. 
+      However, if the method shows a good classification potential, then the analysis could be conducted on a larger dataset. 
       In addition to the temporal evolution, the identification of categories of politicians (age, gender, political affiliation) 
       using informal language more frequently may also be useful to better characterize the phenomenon. 
     </p>
@@ -69,11 +71,14 @@ cover-img: "https://www.americangrit.com/wp-content/uploads/2017/10/congress006-
   </h1>
   
     <p>
-    Quotebank is the main data source for this project.  It is derived from the work of the The Data Science Lab of EPFL in collaboration with Stanford University. 
-    Quotebank is an open corpus of 178 million quotations attributed to the speakers who uttered them. 
-	    The data has been extracted from 162 million English-language news articles published between 2008 and 2020. 
-	    To obtain a corpus of that scale the team of the <a href="https://dlab.epfl.ch/" target="_blank">DLAB</a> developped a minimally supervised framework for extracting and attributing quotations 
-	    from massive corpora with a <a href="https://en.wikipedia.org/wiki/BERT_(language_model)" target="_blank">BERT-based model</a>. 
+		Quotebank is the main data source for this project.  
+		It is derived from the work of the ... of EPFL in collaboration with Stanford University. 
+		Quotebank is an open corpus of 178 million quotations attributed to the speakers who uttered them. 
+		The data has been extracted from 162 million English-language news articles published between 2008 and 2020. 
+		To obtain a corpus of that scale the team of the 
+		<a href="https://dlab.epfl.ch/" target="_blank">DLAB</a> developed a minimally supervised framework 
+		for extracting and attributing quotations from massive corpora with a 
+		<a href="https://en.wikipedia.org/wiki/BERT_(language_model)" target="_blank">BERT-based model</a>. 
 	    The full dataset is publicly available on <a href="https://doi.org/10.5281/zenodo.4277311" target="_blank">Zenodo</a> 
 	    and a more detailed description of the methods used for quote extraction can be found in the <a href="https://dlab.epfl.ch/people/west/pub/Vaucher-Spitz-Catasta-West_WSDM-21.pdf" target="_blank">paper</a> of the research team 
 	    of the EPFL laboratory (T. Vaucher, A. Spitz, M. Catasta, R. West 2021). 
@@ -87,9 +92,9 @@ cover-img: "https://www.americangrit.com/wp-content/uploads/2017/10/congress006-
 
   
     <p>
-      Quotbank outputs are given with a prediction on one or many candidate speaker. 
-	    Overall, Quobert correctly attributes 86.9% of quotations in our experiments but sometimes the outcome is quiet uncertain. 
-	    The data output by the quotebank algorithm is of the following form:
+      Quotbank outputs are given with a prediction on one or many candidate speakers. 
+      Overall, Quobert correctly attributes 86.9% of quotations in our experiments but sometimes the outcome is quite uncertain. 
+      The data output by the quotebank algorithm is of the following form:
     </p>
     
 <!-- Table example of one quote -->   
@@ -128,7 +133,8 @@ cover-img: "https://www.americangrit.com/wp-content/uploads/2017/10/congress006-
 
 	
 	<p>
-		Data wrangling is therefore necessary. The idea is not to keep all the quotes for the sake of uncertainty. 
+		<b>Data wrangling</b> is therefore necessary. 
+		The idea is not to keep all the quotes for the sake of uncertainty. 
 		The following deletion criteria have been applied:
 	</p>
 
@@ -138,7 +144,8 @@ cover-img: "https://www.americangrit.com/wp-content/uploads/2017/10/congress006-
 	</ul>
 	
 	<p>
-		After this data wrangling, the repartition of probabilities is represented yearwise as a sanity check
+		After this data wrangling, the repartition of probabilities is represented yearwise as a sanity check 
+		(note that the difference is very small, but still visible):
 	</p>
 
 	
@@ -319,33 +326,21 @@ function showSlides(n) {
 		The query goes through a <a href="https://en.wikipedia.org/wiki/WHOIS" tagret="_blank">WHOIS</a> server directly instead of 
 		going through an intermediate web which increases the efficiency of the retrieval. 
 	</p>
-
-	<!-- TODO : WHOIS dataplot -->
 	
 	<p>
-		To trace the source of the quotation, one useful indicator could be the organisation registered for the quote’s URL. 
+		To trace the source of the quotation, one useful indicator could be <b>the organisation registered for the quote’s URL</b>. 
+		We thus performed WHOIS requests on quotation web domains and tried to retrieve information for the fields 
+		"organization, country, state, city".
+	</p>
+	
+	<p>
 		We found out that about a third of the quotes appeared in articles whose URLs are detained by ten organisations.
 	</p>
 	
 
-<style>
-/* container */
-.container {
-  max-width: 500px;
-  position: relative;
-  margin: auto;
-}
-</style>
-<div class="container">
-	<center> <img src="assets/img/metadataPlot_org_pie.png" style="max-width: 410px"> </center>
-</div>
-
-<div class="container">
-	  <img src="assets/img/metadataPlot_org_top_ten_pie.png" style="max-width: 800px"> 
-
-</div>
 
 
+<img src="assets/img/metatdataPlot_org_pie_merged.png">
 	
 	<p>
 		It can be seen that a large share of the names appearing in the top ten organizations 
@@ -376,9 +371,10 @@ function showSlides(n) {
 
 	
 	<p>
-		We can observe that the United States is the most represented country. 
+		It is easy to see that the United States is the most represented country. 
 		Moreover, all of the nine most recurrent states are U.S. states. 
-		This suggests that focusing on the United States might be a good solution to frame our field of application.
+		This suggests that focusing on the United States might be a good solution to frame 
+		our field of application without running out of data.
 	</p>
 	
 	<h2>
@@ -387,11 +383,13 @@ function showSlides(n) {
 	
 	<p>
 		Another important piece of information in the analysis process is to know a little more about the speakers. 
-		For this, Wikidata is a very interesting data source. 
-		As American politicians usually have a Wikipedia page, information about their age, political orientation, 
-		and gender can be easily retrieved automatically using a provided parquet file.<br>
-		To check the data representativity, the metadata from speakers is used to explore the different main features of speakers. 
-		Taking a random sample of 1 million quotes, the following  repartitions can be drawn:
+		For this, <a href="https://www.wikidata.org/wiki/Wikidata:Main_Page" target="_blank">Wikidata</a> is a very interesting data source. 
+		As American politicians usually have a Wikipedia page, information about their age, 
+		political orientation, and gender can be easily retrieved automatically using a provided parquet file.
+	</p>
+	
+	<p>
+		To check the data representativity, the metadata from speakers is used to explore the different main features of speakers. Taking a random sample of 1 million quotes, the following  repartitions can be drawn:
 	</p>
 	
 
@@ -408,12 +406,14 @@ function showSlides(n) {
 	<p>
 		American nationality and the profession of 'politician' seem to be predominant. 
 		Moreover, one might think that the use of informal language is less present in the political world than elsewhere. 
-		It would therefore be interesting to look more closely at this category of speakers.
+		It would therefore be interesting to look more closely at this category of speakers in order to verify 
+		the preconceived notions of this statement.
 	</p>
 	
 	<p>
-		Thus, the decision was made to focus on American politicians. 
-		Quotes from this category of the population will be used to analyze the results of the informal/formal classification techniques.
+		Thus, the decision was made to focus on American politicians in order to clarify the research field. 
+		Quotes from this category of the population will be used to analyze 
+		the results of the informal/formal classification techniques.
 	</p>
 	
 	
@@ -519,7 +519,7 @@ function showSlides(n) {
 		The biggest problem with this method is that it is too arbitrary. 
 		The words taken into account indeed come from Urban dictionary, known as the reference for slang words, 
 		but (as explained above) a threshold must be introduced to avoid including words that are too frequent. 
-		The choice was to keep only the word of the dictionary that appears in <b>0.1%</b> of the quotes. 
+		The choice was to keep only the words of the dictionary that appear in less than <b>0.1%</b> of the quotes. 
 		Some words from the urban dictionary are widely used nowadays even with this low threshold 
 		which makes the classification not very robust.
 	</p>
@@ -604,7 +604,9 @@ function showSlides(n) {
 		This dataset is illustrative, but non-exhaustive list of contractions discriminating informal language. 
 		Once the corpus of contractions is created, it is possible to check whether each quote contains at least one of the contractions. 
 		Most recurrent contractions are removed from the discriminative corpus in a similar way 
-		as in the slang detection method (using a threshold of 2%). <br>
+		as in the slang detection method (using a threshold of 2%).
+	</p> 
+	<p>
 		Tokenization has not been performed on the quotes as it did not apply well to contractions 
 		since they are usually made of more than one tokens. 
 		As an example, the contraction “can’t” consists of tokens “can” and “n’t” 
@@ -615,9 +617,8 @@ function showSlides(n) {
 		To qualify the performance of the classification, it is necessary to compare it with ground-truth. 
 		The problem is that there is no clear criterion to characterize whether a quote is formal or informal. 
 		The subjectivity of the qualifier "informal" makes the task of setting labels difficult. 
-		Crowdsourcing has a lot of potential for such a task, because if enough people give their opinion 
-		then we will get closer to ground-truth. 
-		However, this method was not chosen due to a lack of time and resources, 
+		<b>Crowdsourcing</b> has a lot of potential for such a task, because if enough people give their opinion 
+		then we will get closer to ground-truth. However, this method was not chosen due to a lack of time and resources, 
 		then a pseudo-crowdsourcing within the group was carried out. 
 		In total, four hundred randomly selected quotes have been labeled by the 4 members of the research group. 
 	</p>
@@ -767,7 +768,7 @@ function showSlides(n) {
 		<a href="https://en.wikipedia.org/wiki/Wikipedia:Manual_of_Style" target="_blank">manual of style</a>. 
 		Each of these corpora is divided in sentences using punctuation tokenization, 
 		which are divided into unigrams using work tokenization. 
-		Most common unigrams are stored in a feature vector. 
+		Most common <b>unigrams</b> are stored in a feature vector. 
 		By checking if unigrams are present in each quote, a bag-of-words matrix that states 
 		which feature unigrams are present (columns) in each quote (lines) is made. 
 		The model is then trained using this matrix and the “formal” or “informal” labels corresponding to each matrix line. 
@@ -784,9 +785,10 @@ function showSlides(n) {
 	<center><img src="assets/img/NBC_cfmatrix.svg" style="max-width:600px"></center>
  
  
- 
-	<!-- TEXTE -->
-	
+	<p>
+		The confusion matrix looks rather balanced, especially 
+		when compared to the one made using the contractions method. 
+	</p>	
 	
 	<!-- Table metric -->
 	<center>
@@ -825,6 +827,24 @@ function showSlides(n) {
 </tbody>
 </table>
 	</center>
+ 
+	<p>
+		By interpreting the accuracies, one can guess that the model understands what formal and colloquial means in the same proportions. 
+		This was not the case in the previous methods, where quotes were labeled as formal only in the absence of any colloquial aspect.
+	</p>
+ 
+	<p>
+		The overall accuracy on this set  is way smaller than the one computed on the test set after the model training. 
+		This 20% decrease has various causes. 
+		First, the annotation of ground truth quotes by the research team members results in a biased labelling. 
+		Moreover, the difference between the quotebanks sentences and the training and testing corpora is important. 
+		The model is designed to test quotes of similar nature to the ones he was trained on. 
+		The ideal methodology would have been to annotate enough of the quotebank quotations to train a 
+		Naive Bayes model whose designed application field is the quotebank dataset. 
+		Of course this would be far too time and energy consuming to be done in the scope of this project.
+	</p>
+	
+ 
  
  
  
@@ -935,7 +955,8 @@ function showSlides(n) {
 		These quotes often contain one or more contractions but on the other hand, 
 		some quotes are classified formal with contraction methods and informal with the other. 
 		As the quote no 8, these quotes generally contain one contraction that have been removed in the contraction method 
-		(under the defined threshold) or have a colloquial schema that has only been detected by the supervised machine learning model.
+		(under the defined threshold) or have a colloquial schema 
+		that has only been detected by the supervised machine learning model.
 	</p>
 	
 	
@@ -949,8 +970,8 @@ function showSlides(n) {
 		it is now important to process them wisely to extract the most knowledge possible. 
 		Let's focus on the American politicians, on which we could collect data thanks to the metadata. 
 		The large number of quotes available in quotebank allows us to have a set of 600 000 excerpts 
-		of speeches attributed to American politicians. 
-		Let's see what all this data can tell us about the use of informal language in news articles between 2015 and 2020. 
+		of speeches attributed to American politicians. Let's see what all this data can tell us 
+		about the use of informal language in news articles <b>between 2015 and 2020</b>. 
 		Note that Donald Trump was not represented in the speaker metadata from Wikidata. 
 		Therefore, he will not appear in the further analysis.
 	</p>
@@ -987,10 +1008,12 @@ function showSlides(n) {
 	<p>
 		Now, we need to determine whether there is a statistically significant relationship between the variables. 
 		Relationships, or correlations between variables, are crucial if we want to use the value of one variable 
-		to interpret its influence on the value of another. Let's just start by performing a linear regression on the available dataset. 
-		The results are as follows if we take into account the age, gender and political orientation (democrat or republican) of the speaker. 
-		Let’s see the R² score (coefficient of determination), which is defined as the regression score function 
-		which refers to the fraction of variance explained by the model. 
+		to interpret its influence on the value of another. 
+		Let's just start by performing a <b>linear regression</b> on the available dataset. 
+		The results are as follows if we take into account the <b>age</b>, <b>gender</b> and <b>political orientation</b> 
+		(democrat or republican) of the speaker. 
+		Let’s see the R² score (coefficient of determination), 
+		which is defined as the regression score function which refers to the fraction of variance explained by the model. 
 		R² is a measure of how closely the observed data points are to the fitted regression line, generally the higher the better:
 	</p>
 	
@@ -1030,7 +1053,8 @@ function showSlides(n) {
 	
 	<p>
 		The R² obtained is very close to 0, which means that a horizontal line explains the data equally as well as the model, 
-		no variance is explained by the model. This result indicates that linear regression will not work for this type of outcome, 
+		no variance is explained by the model. 
+		This result indicates that linear regression will not work for this type of outcome, 
 		no further investigation will be made with this tool.
 	</p>
 	
@@ -1106,45 +1130,53 @@ function showSlides(n) {
 		the democrat party and the republican party. Now we can visualize the effect of all the features on the outcome:
 	</p>
 	
+	<p>
+		Let’s start with the <b>contraction method</b>:
+	</p>
 	
 	
+	<img src="assets/img/contr_errorbar.svg">
+
+	<p>
+		According the above visualization we can state that:
+	</p>
+	
+	<ul>
+		<li>Age and the political side (in fact being democrat) are significant negative predictors of colloquialism use.</li>
+		<li>In a lesser extent gender (in fact being a men) is a  positive predictors of colloquialism use.</li>
+	</ul>
 	
 	
+	<p>
+		Since all predictors are standardized, we can interpret in the following way:
+	</p>
 	
+	<ul><li>When all other predictors take mean values, an increase of age by 1 standard deviation (12 year), leads on average 
+	to a decrease by 0.0286 of log odds of colloquialism use.</li></ul>
 	
+	<p>
+		Now if we look at the same plot for the <b>naive bayes classification</b>:
+	</p>
 	
+	<img src="assets/img/nb_errorbar.svg">
 	
+	<p>
+		We can state that:
+	</p>
 	
+	<ul>
+		<li>Gender and the political side are significant negative predictors of colloquialism use.</li>
+		<li>In a lesser extent age is a significative positive predictors of colloquialism use.</li>
+	</ul>
 	
+	<p>
+		Since all predictors are standardized, we can interpret in the following way:
+	</p>
 	
+	<ul><li>When all other predictors take mean values, an increase of age by 1 standard deviation (12 year), 
+	leads on average to an increase by 0.088 of log odds of colloquialism use.</li></ul>
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	<h1>
 		Let's take a cautious look on the relation between the features
 	</h1>
@@ -1225,7 +1257,16 @@ function showSlides(n) {
 	</p>
 	
 	
-	<!-- TODO REMPLIR ICI -->
+	<p>
+		We observe that the null hypothesis can be rejected for all pairs of features. 
+		The most correlated variables are gender and political orientation. 
+		More women are affiliated to the Democratic party as in the Republican one. 
+		So far this cycle, according to the 
+		Center for Women and American Politics at 
+		<a = href="https://cawp.rutgers.edu/facts/current-numbers" target="_blank">Rutgers University</a>, 
+		350 Democratic women have filed to run for the House, compared with 118 Republican women. 
+		Democratic women have won 105 House primaries, compared with just 25 by Republican women.
+	</p>
 	
 	
 	<h1>
@@ -1241,15 +1282,13 @@ function showSlides(n) {
 	
 	<p>
 		For the logistic regressions previously presented (Naive-Bayes/ contractions method), the results must be qualified. 
-		The correlation between the features is negligible for gender and age, age and political party but remains important 
-		for gender and political party. 
+		The correlation between the features is negligible for gender and age, age and political party 
+		but remains important for gender and political party. 
 		Complementary analyses with the suppression of features that depend too much on each other could be performed. 
-		The tools offered by observational studies could also be used to normalize the sample (propensity score, randomization).  
+		The tools offered by observational studies could also be used to normalize the sample 
+		(propensity score, randomization). 
 		These tools are tools to help draw valid conclusions from found data.
 	</p>
-	
-	
-	
 	
 	
 	<h1>
